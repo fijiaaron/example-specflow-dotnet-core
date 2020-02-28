@@ -1,5 +1,5 @@
 ﻿using TechTalk.SpecFlow;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using System.Diagnostics;
 
 namespace Web.Specs
@@ -22,7 +22,7 @@ namespace Web.Specs
         [Given("I want to test parsing")]
         public void GivenIWantToTestParsing()
         {
-            Assert.AreEqual(1, 1);
+            Assert.That(1, Is.EqualTo(1));
         }
     }
 }

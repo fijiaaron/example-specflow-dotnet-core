@@ -3,7 +3,7 @@ using TechTalk.SpecFlow;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System.IO;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace Web.Specs
 {
@@ -19,7 +19,7 @@ namespace Web.Specs
         [Then("the page title is [\"'](.*)[\"']")]
         public void ThePageTitleIs(string title)
         {
-            Assert.AreEqual(driver.Title, title);
+            Assert.That(driver.Title, Is.EqualTo(title));
         }
 
         [When("I search for '(.*)'")]
@@ -43,7 +43,7 @@ namespace Web.Specs
         [Then("the environment is '(.*)'")]
         public void TheEnvironmentIs(string expectedEnvironment)
         {
-            Assert.AreEqual(Environment.GetEnvironmentVariable("ENVIRONMENT"), expectedEnvironment);
+            Assert.That(Environment.GetEnvironmentVariable("ENVIRONMENT"), Is.EqualTo(expectedEnvironment));
         }
 
         [BeforeFeature("web")]
@@ -69,7 +69,7 @@ namespace Web.Specs
             try
             {
                 var separator = Path.DirectorySeparatorChar;
-                string screenshotDir = ScenarioContext.Current.ScenarioContainer.Resolve<TestContext>().ResultsDirectory.ToString() + separator + "screenshots";
+                string screenshotDir = ScenarioContext.Current.ScenarioContainer.Resolve<TestContext>().WorkDirectory.ToString() + separator + "screenshots";
                 if (!Directory.Exists(screenshotDir))
                 {
                     Directory.CreateDirectory(screenshotDir);

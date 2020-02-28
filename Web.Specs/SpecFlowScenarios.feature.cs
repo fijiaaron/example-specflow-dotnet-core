@@ -19,13 +19,13 @@ namespace Web.Specs
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
+    [NUnit.Framework.TestFixtureAttribute()]
+    [NUnit.Framework.DescriptionAttribute("Test")]
+    [NUnit.Framework.CategoryAttribute("web")]
     public partial class TestFeature
     {
         
-        private static TechTalk.SpecFlow.ITestRunner testRunner;
-        
-        private Microsoft.VisualStudio.TestTools.UnitTesting.TestContext _testContext;
+        private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = new string[] {
                 "web"};
@@ -33,20 +33,8 @@ namespace Web.Specs
 #line 1 "SpecFlowScenarios.feature"
 #line hidden
         
-        public virtual Microsoft.VisualStudio.TestTools.UnitTesting.TestContext TestContext
-        {
-            get
-            {
-                return this._testContext;
-            }
-            set
-            {
-                this._testContext = value;
-            }
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
-        public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
+        [NUnit.Framework.OneTimeSetUpAttribute()]
+        public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Test", null, ProgrammingLanguage.CSharp, new string[] {
@@ -54,24 +42,19 @@ namespace Web.Specs
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.ClassCleanupAttribute()]
-        public static void FeatureTearDown()
+        [NUnit.Framework.OneTimeTearDownAttribute()]
+        public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute()]
+        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
-            if (((testRunner.FeatureContext != null) 
-                        && (testRunner.FeatureContext.FeatureInfo.Title != "Test")))
-            {
-                global::Web.Specs.TestFeature.FeatureSetup(null);
-            }
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCleanupAttribute()]
+        [NUnit.Framework.TearDownAttribute()]
         public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -80,7 +63,7 @@ namespace Web.Specs
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<Microsoft.VisualStudio.TestTools.UnitTesting.TestContext>(_testContext);
+            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -93,11 +76,9 @@ namespace Web.Specs
             testRunner.CollectScenarioErrors();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("User Searches Yahoo")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Test")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("web")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("active")]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("User Searches Yahoo")]
+        [NUnit.Framework.CategoryAttribute("active")]
         public virtual void UserSearchesYahoo()
         {
             string[] tagsOfScenario = new string[] {
@@ -134,11 +115,9 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("User Searches Google")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Test")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("web")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("active")]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("User Searches Google")]
+        [NUnit.Framework.CategoryAttribute("active")]
         public virtual void UserSearchesGoogle()
         {
             string[] tagsOfScenario = new string[] {
@@ -175,11 +154,9 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("User Goes to Amazon")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Test")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("web")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ignore")]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("User Goes to Amazon")]
+        [NUnit.Framework.CategoryAttribute("ignore")]
         public virtual void UserGoesToAmazon()
         {
             string[] tagsOfScenario = new string[] {
@@ -216,11 +193,9 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("User Goes to Github")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Test")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("web")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("github")]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("User Goes to Github")]
+        [NUnit.Framework.CategoryAttribute("github")]
         public virtual void UserGoesToGithub()
         {
             string[] tagsOfScenario = new string[] {
@@ -257,13 +232,11 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("User Goes to Appveyor")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Test")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("web")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("active")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("appveyor")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("screenshot")]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("User Goes to Appveyor")]
+        [NUnit.Framework.CategoryAttribute("active")]
+        [NUnit.Framework.CategoryAttribute("appveyor")]
+        [NUnit.Framework.CategoryAttribute("screenshot")]
         public virtual void UserGoesToAppveyor()
         {
             string[] tagsOfScenario = new string[] {
