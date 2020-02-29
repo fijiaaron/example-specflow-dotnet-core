@@ -28,9 +28,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove=".DS_Store" />
+    <None Remove="TestResults\.DS_Store" />
+    <None Remove="TestResults\Results.xml" />
   </ItemGroup>
   <ItemGroup>
     <SpecFlowObsoleteCodeBehindFiles Remove="NonWeb.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="SpecFlowScenarios.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="SpecFlowScenarioOutline.feature.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <SpecFlowFeatureFiles Update="SpecFlowScenarioOutline.feature">
+      <Visible>False</Visible>
+    </SpecFlowFeatureFiles>
   </ItemGroup>
 </Project>
