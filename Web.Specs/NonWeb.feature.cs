@@ -74,13 +74,13 @@ namespace Web.Specs
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Parsing Special Characters - (Example\'s/E.G.)")]
+        [NUnit.Framework.DescriptionAttribute("Parsing Special Characters - (Example\'s/EG)")]
         [NUnit.Framework.CategoryAttribute("active")]
-        public virtual void ParsingSpecialCharacters_ExamplesE_G_()
+        public virtual void ParsingSpecialCharacters_ExamplesEG()
         {
             string[] tagsOfScenario = new string[] {
                     "active"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Parsing Special Characters - (Example\'s/E.G.)", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Parsing Special Characters - (Example\'s/EG)", null, new string[] {
                         "active"});
 #line 4
 this.ScenarioInitialize(scenarioInfo);
