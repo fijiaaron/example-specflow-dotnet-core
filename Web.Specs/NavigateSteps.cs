@@ -49,7 +49,11 @@ namespace Web.Specs
         [BeforeFeature("web")]
         public static void BeforeFeature()
         {
-            FeatureContext.Current.Add("driver", new ChromeDriver());
+            var chromeOptions = new ChromeOptions();
+            chromeOptions.AddArgument("headless");
+            chromeOptions.AddArgument("no-sandbox");
+
+            FeatureContext.Current.Add("driver", new ChromeDriver(chromeOptions));
             ((IWebDriver) FeatureContext.Current["driver"]).Manage().Window.Maximize();
         }
 
