@@ -49,11 +49,12 @@ namespace Web.Specs
         [BeforeFeature("web")]
         public static void BeforeFeature()
         {
-            var chromeOptions = new ChromeOptions();
-            chromeOptions.AddArgument("headless");
-            chromeOptions.AddArgument("no-sandbox");
+            var options = new ChromeOptions();
+            if(Environment.GetEnvironmentVariable("IS_TESTERY") == "true") {
+                options.AddArguments(Environment.GetEnvironmentVariable("TESTERY_CHROME_ARGS").Split(';'));
+            }
 
-            FeatureContext.Current.Add("driver", new ChromeDriver(chromeOptions));
+            FeatureContext.Current.Add("driver", new ChromeDriver(options));
             ((IWebDriver) FeatureContext.Current["driver"]).Manage().Window.Maximize();
         }
 
