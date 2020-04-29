@@ -55,7 +55,6 @@ namespace Web.Specs
             }
 
             FeatureContext.Current.Add("driver", new ChromeDriver(options));
-            ((IWebDriver) FeatureContext.Current["driver"]).Manage().Window.Maximize();
         }
 
         [BeforeFeature]
